@@ -53,5 +53,24 @@ public class CalculatorV10Test {
 		}
 	}
 	
+	@Test
+	public void testMultiply() {
+
+		Random random = new Random();
+		int firstNumber = 0;
+		int secondNumber = 0;
+		int result = 0;
+
+		for (int i = 0; i < 10; i++) {
+
+			firstNumber = random.nextInt(100); // = värde mellan 0-99
+			secondNumber = random.nextInt(100); // = värde 0-99
+			result = firstNumber * secondNumber;
+			
+			LOG.info("Testing the method multiply with " + firstNumber + " and " + secondNumber);
+			assertEquals(c.multiply(firstNumber, secondNumber), result);
+			LOG.info(c.multiply(firstNumber, secondNumber) + " = " + result + "\n");
+		}
+	}
 
 }
